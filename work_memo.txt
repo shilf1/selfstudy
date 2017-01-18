@@ -1,0 +1,13 @@
+1. PIP intall error
+
+1) pwndbg
+# Install Python dependencies
+-sudo ${PYTHON} -m pip install --target ${SITE_PACKAGES} -Ur requirements.txt
++sudo ${PYTHON} -m pip install --no-cache-dir --trusted-host pypi.python.org --target ${SITE_PACKAGES} -Ur requirements.txt
+
+2) binwalk
+-        $SUDO $PIP_COMMAND install $PACKAGE                                                                                                                                                                                           
++        $SUDO $PIP_COMMAND install --no-cache-dir --trusted-host pypi.python.org $PACKAGE    
+
+
+
