@@ -1,0 +1,12 @@
+
+
+4. passcode
+
+http://blog.naver.com/PostView.nhn?blogId=ln8520nl&logNo=220695128399&categoryNo=0&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView
+
+gdb 
+x/40x $esp
+
+PLT(procedure linkage table) -> GOT(global offset table) -> PLT -> dl runtime -> printf
+
+readelf -S passcode | grep .plt
