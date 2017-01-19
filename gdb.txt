@@ -10,23 +10,7 @@ x [Address expression]
 x /[Format] [Address expression]
 x /[Length][Format] [Address expression]
 
-
-o - octal
-x - hexadecimal
-d - decimal
-u - unsigned decimal
-t - binary
-f - floating point
-a - address
-c - char
-s - string
-i - instruction
-
-b - byte
-h - halfword (16-bit value)
-w - word (32-bit value)
-g - giant word (64-bit value)
-
+x/40x $esp
 x/o $esp 
 x/4wx 0xbffff2a0
 x/hu $ebp
@@ -37,6 +21,11 @@ x/3i $eip
 x/3cb 0x8048484
 x/s 0x8048484
 
+o - octal / x - hexadecimal / d - decimal / u - unsigned decimal / t - binary / f - floating point /  a - address 
+c - char / s - string / i - instruction
+
+b - byte / h - halfword (16-bit value) / w - word (32-bit value) / g - giant word (64-bit value)
+
 
 (gdb) x/s 0x8048680
 0x8048680 <_IO_stdin_used+28>:   "Name : "
@@ -45,7 +34,6 @@ x/s 0x8048484
 0x8048688 <_IO_stdin_used+36>:  83 'S'  101 'e'
 (gdb) x/5x 0x8048680
 0x8048680 <_IO_stdin_used+28>:  0x4e    0x61    0x6d    0x65    0x20
-(gdb)
 
 
 ===================================================
