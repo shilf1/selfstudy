@@ -1,0 +1,58 @@
+gdb
+
+pwndbg
+
+
+===================================================
+1. x command
+
+x [Address expression]
+x /[Format] [Address expression]
+x /[Length][Format] [Address expression]
+
+
+o - octal
+x - hexadecimal
+d - decimal
+u - unsigned decimal
+t - binary
+f - floating point
+a - address
+c - char
+s - string
+i - instruction
+
+b - byte
+h - halfword (16-bit value)
+w - word (32-bit value)
+g - giant word (64-bit value)
+
+x/o $esp 
+x/4wx 0xbffff2a0
+x/hu $ebp
+x/gt $eip
+
+x/i $eip
+x/3i $eip
+x/3cb 0x8048484
+x/s 0x8048484
+
+
+(gdb) x/s 0x8048680
+0x8048680 <_IO_stdin_used+28>:   "Name : "
+(gdb) x/10c 0x8048680
+0x8048680 <_IO_stdin_used+28>:  78 'N'  97 'a'  109 'm' 101 'e' 32 ' '  58 ':' 32 ' '   0 '\0'
+0x8048688 <_IO_stdin_used+36>:  83 'S'  101 'e'
+(gdb) x/5x 0x8048680
+0x8048680 <_IO_stdin_used+28>:  0x4e    0x61    0x6d    0x65    0x20
+(gdb)
+
+
+===================================================
+2. watch
+
+watch $eax => let me know when eax is changed
+watch $804981c
+
+info watchpoints
+
