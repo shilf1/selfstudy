@@ -53,3 +53,9 @@ info b
 
 disable br 2 4
 enable 2-5
+
+===================================================
+4.
+
+set disassembly-flavor intel
+
