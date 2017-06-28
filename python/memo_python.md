@@ -15,15 +15,15 @@
     (gdb) r <<< $(python -c 'print "A"*1')
 
 - breakpoint
- disas main
- b *main+20
- b function_name
- info b
- delete br 1
+disas main
+b *main+20
+b function_name
+info b
+delete br 1
 
 - x
- x / [Format] [Address]
- x / [Length] [Format] [Address]
- x/5x 0x8048680
- x/s $r0
- x/3i 0x80484a0
+x / [Format] [Address]
+x / [Length] [Format] [Address]
+x/5x 0x8048680
+x/s $r0
+x/3i 0x80484a0
