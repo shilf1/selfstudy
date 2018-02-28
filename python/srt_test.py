@@ -100,6 +100,13 @@ while found == False:
 				link.click()
 				break
 	
+	if found == True:
+		print('\n\n> We Reserved ticket =====================\n')
+		user_choice = input('Please click ENTER button to close application')
+		if not user_choice:
+			print('\n\n> EXIT =====================\n')
+			quit()
+	
 	# can not find yet
 	count+=1
 	prev_search_form = driver.find_element_by_id('search-form')
