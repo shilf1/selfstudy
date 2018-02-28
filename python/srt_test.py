@@ -1,6 +1,4 @@
-
-#https://beomi.github.io/2017/02/27/HowToMakeWebCrawler-With-Selenium/
-#https://beomi.github.io/2017/01/20/HowToMakeWebCrawler-With-Login/
+#! python
 
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
