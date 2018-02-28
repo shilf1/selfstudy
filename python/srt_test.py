@@ -9,11 +9,12 @@ from selenium.webdriver.common.by import By
 #import action
 import time
 
-
-#USER INFO ====
+# PLEASE WRITE YOUR ACCOUNT INFO HERE to use this python script
+# === USER INFO ===
 USER_ID = ""
 USER_PW = ""
 
+# === TICKET INFO to reserve ===
 TARGET_DATE = "2018/02/28(수)"
 TARGET_TIME = "18:30"
 
@@ -22,7 +23,7 @@ ARV = "대전"
 
 NUM_ADT = "어른 1명"
 NUM_CHD = "만 4~12세 0명"
-#==============
+# =================
 
 
 driver = webdriver.Chrome('C:\\Users\shilf\AppData\Local\Programs\Python\Python36\Scripts\chromedriver.exe')
@@ -34,7 +35,8 @@ driver.implicitly_wait(3)
 
 driver.get(url_login)
 
-# 1. LOGIN : set id / pw to login -------------------------------------------
+# 1. LOGIN : set id / pw to login --------------------------
+
 driver.find_element_by_name("srchDvNm").send_keys(USER_ID)
 driver.find_element_by_name("hmpgPwdCphd").send_keys(USER_PW)
 
@@ -45,6 +47,7 @@ form.submit()
 driver.get(url_reserve)
 
 # 2. search-form  -------------------------------------------
+
 driver.find_element_by_name("dptRsStnCdNm").clear()
 driver.find_element_by_name("dptRsStnCdNm").send_keys(DPT)
 driver.find_element_by_name("arvRsStnCdNm").clear()
@@ -59,7 +62,7 @@ form.submit()
 #form.click()
 
 
-# 3. search list  -------------------------------------------
+# 3. search list (result) -----------------------------------
 
 output = len(driver.find_elements_by_xpath("//*[@id='result-form']/fieldset/table/tbody/tr"))
 print(output)
@@ -93,7 +96,7 @@ while found == False:
 
 		if (ex_time == TARGET_TIME):
 			if ("예약하기" in text):
-				print("we found it !!!")
+				print("we found it !!!") # we found it -----------------------------
 				found = True;
 				WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="result-form"]/fieldset/table/tbody/tr['+str(i)+']/td[7]/a[1]')))
 				link = driver.find_element_by_xpath("//*[@id='result-form']/fieldset/table/tbody/tr["+str(i)+"]/td[7]/a[1]")
@@ -107,7 +110,7 @@ while found == False:
 			print('\n\n> EXIT =====================\n')
 			quit()
 	
-	# can not find yet
+	# there is no ticket, keep finding
 	count+=1
 	prev_search_form = driver.find_element_by_id('search-form')
 	prev_search_form.submit()
